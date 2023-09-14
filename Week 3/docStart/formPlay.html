@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        function val () {
+            let ret = true;
+            // look for something in first
+            if (document.getElementById ("first").value == "") {
+                // turn it red
+                document.getElementById("first").style.backgroundColor = "red";
+                // send back false
+                ret=false;
+            }
+
+            if (document.getElementById ("last").value == "") {
+                // turn it red
+                document.getElementById("last").style.backgroundColor = "red";
+                // send back false
+                ret=false;
+            }
+             
+            return ret;
+        }
+    </script>
+</head>
+<body>
+    <form action="page.php" method="get" onsubmit="return val();">
+        first:<input type="text" name="fname" id="first"/><br/>
+        last:<input type="text" name="lname" id="last"/><br/>
+        <input type="submit" value="50">
+    </form>
+</body>
+</html>

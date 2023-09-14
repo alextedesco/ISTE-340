@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>window play</title>
+	<!--
+		<script async/defer/none src=""/></script>
+
+			async
+				- parallel loading
+				- immediate execution...
+			defer
+				- parallel loading
+				- waits until the page is parsed
+			none
+				- blocking on loading
+				- once loaded, immediate execution while still blocking...
+
+	-->
+
+	<script>
+		/*
+			browser test
+				- can this browser understand how I am going to 
+				go about writing my code. (DOM level3)
+		*/
+
+		if (!document.getElementById ()) {
+			// I'm in a Old browser - chuck them...
+			window.location = "legacy.html";
+
+		}
+
+		var newWin;
+		function makeNew () {
+			newWin = window.open ("","", "height=300","width=250", "top=250", "left=100");
+			newWin.document.write ("<h2>Hello, World!</h2>");
+
+			// to show the same domain
+			// newWin.location = "https://people.rit.edu/dsbics"
+		}
+
+		function closeNew () {
+			newWin.close();
+		}
+
+	</script>
+</head>
+<body style="background-color:#999966;">
+<form>
+  <input type="button" value="Create New Window!" onclick="makeNew()"><br/>
+  <input type="button" value="Close the New Window!" onclick="closeNew()"><br/>
+</form>
+</body>
+</html>
+
+
+

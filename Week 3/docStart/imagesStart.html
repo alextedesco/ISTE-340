@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <title>image play!</title>
+<style type="text/css">
+/*<![CDATA[*/
+	  /*big image placement*/
+	  #bigPlace {position:absolute; top:115px; left:22px;}
+	  body{background:#999966;}
+	  .table { position:absolute;
+	   left:10px; 
+	   top:380px;
+	   z-index:70;
+	   padding:3px;
+	   border-bottom-width:3px; 
+	   border-left-width: 3px; 
+	   border-right-width: 3px; 
+	   border-top-width: 3px; 
+	   border-style: outset; 
+	   border-color:#336699; 
+	  }
+/*]]>*/
+</style>
+<script type="text/javascript">
+//<![CDATA[
+	//preload images!
+	let imgArr = new Array();
+	// img.src = "media/gal2Big.jpg";
+
+	function init() {
+		// load the images AFTER the page is rendered!
+		for (let i=0, len=6;i<len;i++) {
+			imgArr[i] = new Image();
+			imgArr[i].src = "media/gal" + (i+1) + "Big.jpg";
+		}
+	}
+
+	function changeAll( dom ) {
+
+		console.log (dom.src);
+		console.log (imgArr);
+
+		let start = dom.src.indexOf("/gal")+4;
+		let end = dom.src.lastIndexOf(".jpg");
+
+		let num = parseInt (dom.src.substring (start, end));
+
+		console.log (num);
+
+
+		// tell the big image to switch
+		console.log (imgArr[(num - 1)])
+		document.getElementById('bigPic').src = imgArr[(num - 1)].src;
+	}
+
+
+//]]>
+</script>
+</head>
+<body onload="init(document.getElementById('loader').getElementsByTagName('img').length);">
+    <!--Big Pics-->
+    <div id="bigPlace">
+        <img src="media/gal1Big.jpg" name="bigPic" alt="big pics!" id="bigPic" />
+    </div><!--div holding all of the thumbs-->
+    <div class="table">
+        <div id="loader" style="height:90px; width:400px; overflow:auto; white-space: nowrap;">
+            <img src="media/gal1.jpg" onclick="changeAll(this);"  border="0" onmouseover="this.style.cursor='pointer';" alt="image"/> 
+            <img src="media/gal2.jpg" onclick="changeAll(this);" border="0" onmouseover="this.style.cursor='pointer';" alt="image"/> 
+            <img src="media/gal3.jpg" onclick="changeAll(this);" border="0" onmouseover="this.style.cursor='pointer';" alt="image"/> 
+            <img src="media/gal4.jpg" onclick="changeAll(this);" border="0" onmouseover="this.style.cursor='pointer';" alt="image"/> 
+            <img src="media/gal5.jpg" onclick="changeAll(this);" border="0" onmouseover="this.style.cursor='pointer';" alt="image"/> 
+            <img src="media/gal6.jpg" onclick="changeAll(this);" border="0" onmouseover="this.style.cursor='pointer';" alt="image"/>
+        </div>
+    </div>
+</body>
+</html>
