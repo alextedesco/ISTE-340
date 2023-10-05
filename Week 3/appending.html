@@ -1,0 +1,13 @@
+<script>
+
+    let x = document.createElement ("h1");
+    //<h1/>
+
+    x.setAttribute("id", "fred");
+    x.setAttribute("style", "color:green");
+
+    let t = document.createTextNode ("Hi mom...");
+    x.appendChild (t);
+
+    document.getElementsByTagName("body")[0].appendChild(x);
+</script>

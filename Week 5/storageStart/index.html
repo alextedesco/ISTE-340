@@ -1,0 +1,7 @@
+// Old
+document.cookie="danTest=test";
+// then test if cookie is retrievanle
+(document.cookie.indexOf("danTest")!=1)?cookieEnabled=true;cookieEnabled=false}
+
+// Newer, but has some issues that have been seen in React in certain browsers
+if (navigators.cookieEnabled){/*yes*/}else{/*no*/}

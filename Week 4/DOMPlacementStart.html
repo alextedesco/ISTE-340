@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>DOM Placement</title>
+	<script>
+		function changeMe(){
+
+      let rEle = document.createElement ("input");
+      rEle.setAttribute("type", "range");
+
+      // parent.appendChild(ele);
+      // document.getElementsByTagName("body")[0].appendChild (rEle);
+
+      // right after text
+      //document.getElementById("text").appendChild(rEle);
+
+      // parent.inertBefore (ele, childOfParentToGoInFrontOf);
+      //beginning of body tag
+      $$("body", 0).insertBefore(rEle, $$("body", 0).firstChild);
+      // between red and orange
+      $("everything").insertBefore(rEle, $("moreText"));
+
+      // parent.replaceChild(ele, childOfParentToReplace)
+      //$$
+
+      //thingThatIWantToClone.cloneNode(t/f);
+      // let c = $("everything").cloneNode(true);
+      // c.getElementById("buttons").style.top = "30px";
+      // $$("body", 0).appendChild(c);
+
+      // YOU CAN NOT USE THIS ON YOUR PROJECT!!
+      // $("moretext").innerHTML = "<h1>hello</h1> by";
+
+		}
+
+    function $(id) {
+      return document.getElementById(id);
+
+    }
+
+    function $$(tag, num) {
+      return document.getElementsByTagName(tag)[num];
+    } 
+	
+	</script>
+</head>
+<body>
+  <div id="everything">
+    <div id="buttons" style="position:absolute; top:8px; left:200px">
+      <button onclick="changeMe();">Do It!</button>
+    </div>
+
+    <div id="text" style="border:2px solid red;width:10em;">
+      Text
+    </div>
+    
+    <div id="moreText" style="border:2px solid orange;width:10em;">
+      More text
+    </div>
+   
+    <hr/>
+  </div>
+</body>
+</html>

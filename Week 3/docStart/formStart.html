@@ -3,14 +3,31 @@
 <head>
 	<meta charset="utf-8" />
     <title>Form Play</title>
-	<script type="text/javascript">
-  		
+	<script>
+        function go (dom) {
+            //  Go to the location
+            if (dom.value != "none") {
+                window.location = dom.value;
+            }
+        }
+
+        function doColor () {
+            for (let i=0, len=document.forms[0].color.length; i<len; i++) {
+                // am i checked?
+                if (document.forms[0].color[i].checked == true) {
+                    // output
+                    document.getElementById ("out").value == document.forms[0].color[i].value;
+                    
+                    
+                }
+            }
+        }
 	</script>
 </head>
 <body>
     <form id="myForm">
         <!--why onchange below?  How is it different from onclick/onmouseup?-->
-        <select>
+        <select onchange="go(this);">
             <option value="none">
                 --Select page--
             </option>
@@ -26,9 +43,9 @@
         </select>
         <hr />
         <p>Which did you choose?<br />
-        <label for="r"><input type="radio" value="red" id="r"/> Red</label><br/>
-        <label for="g"><input type="radio" value="green" id="g"/> Green</label><br/>
-        <label for="b"><input type="radio" value="blue" id="b"/> Blue</label><br/>
+        <label for="r"><input type="radio" value="red" id="r" name="color"/> Red</label><br/>
+        <label for="g"><input type="radio" value="green" id="g" name="color"/> Green</label><br/>
+        <label for="b"><input type="radio" value="blue" id="b" name="color"/> Blue</label><br/>
         <input type="button" value="Color choice" /></p>
         <p>Your favorite color is: <input type="text" name="favorite" value="" /></p>
     </form>

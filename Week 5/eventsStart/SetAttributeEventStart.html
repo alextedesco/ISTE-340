@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<script>
+			function init() {
+				let myB = document.createElement("button");
+				myB.setAttribute("id", "test");
+				
+
+				myB.setAttribute("onclick", "test(this)"); //this is a window
+
+				myB.onmouseleave = test; //this is a button
+
+				myB.appendChild (document.createTextNode("push me"));
+				//<button id="test" onclick="test()">push me</button>
+				document.getElementsByTagName("body")[0].appendChild(myB);
+			}
+
+			function test () {
+				console.log ("what is this?", this)
+			}
+	
+		</script>
+	</head>
+	<body onload="init();">
+
+	</body>
+</html>
