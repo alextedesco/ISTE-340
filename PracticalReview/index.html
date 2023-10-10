@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function val() {
+            // return true; sends
+            // return false; doesn't send
+        }
+    </script>
+
+    <!-- Forms -->
+    <form action="page.php" method="get" onsubmit="return val();">
+        name: <input type="text" name="fn"/>
+        <input type="submit" value="go">
+    </form>
+    <br>
+
+    <!-- Local Storage
+        localStorage
+        localStorage.setItem("test",4)
+        if(localStorage.getItem("test")){alert(true);}
+        localStorage.removeItem("test", 4)
+        if(localStorage.getItem("test")){alert(true);}
+     -->
+
+    <!-- DHTML
+        Rules: 
+            1.) dom.style.color = "aqua";
+            2.) dom.style.fontFamily = "times";
+                *NOT dom.style.font-family = "time";
+            3.) Everything we get or set is a string
+            4.) UNITS
+     -->
+
+     <!-- Animation -->
+     <script>
+        function go (id, end, dx) {
+            let dom = document.getElementById (id);
+            if (parseInt (dom.style.left) < end) {
+                dom.style.left = parseInt(dom.style.left) + dx + "px";
+                requestAnimationFrame ( function () {go(id, end, dx);});
+            }
+        }
+     </script>
+     <p id="test" onclick="requestAnimationFrame(function (){go('test', 400, 7);})"style="left: 0px;position: relative;">hi</p>
+     
+    <!-- DHTML
+        1.) createElement()
+        2.) setAttribute()
+        3.) createTextNode()
+        4.) appendChild()
+        5.) insertBefore()
+        6.) insertBefore()
+        7.) removeChild()
+        8.) replaceChild()
+        9.) cloneNode()
+    -->
+    <script>
+        var h = document.createElement("h1");
+        h.id = "fred";
+        h.setAttribute ("style", "color: red");
+        h.appendChild (document.createTextNode ("hi mom"));
+        // <h1 id="fred" style="color:red">hi mom</h1>
+
+        document.getElementsByTagName("body")[0].appendChild(h);
+
+        parent.removeChild (childofparentToKill);
+        parent.replaceChild(ele, childOfParentToKill)
+
+        var h = document.getElementById("t").cloneNode(true);
+    </script>
+
+    <!-- Events -->
+    <script>
+        function doIt(dom) {
+            console.log (dom);
+            // h1
+            dom.firstChild.nodeValue = "other";
+        }
+
+        function doOther () {
+            console.log (this);
+        }
+
+        function doThis () {
+            console.log (this);
+        }
+    </script>
+    <h1 onclick="doIt(this)"></h1>
+
+
+
+
+    
+
+</body>
+</html>

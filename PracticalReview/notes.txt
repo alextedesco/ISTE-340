@@ -1,0 +1,18 @@
+Practical Notes:
+- You can use any books, any online resource (Stackoverflow, W3 Schools) or class material lecture notes (bogaard site)
+- Starter files to be downloaded off MyCourses
+- 5 Questions with multiple parts
+- Zip Files at the end of class
+- You CANNOT write any more HTML. You can write attriubutes (IDs, onmouseover, onclick, etc) but not tags themselves (divs, spans, etc)
+
+Review: 
+- Forms
+- Events
+- Local Storage & Cookies (Cookies will not be on Practical)
+- JSON
+- Window/Dom objects
+- Getters (.getElementById & .getElementsByTagName)
+- Animation & DHTML
+- Dynamic Creation
+
+- Ajax/Fetch (Will not be on Practical)

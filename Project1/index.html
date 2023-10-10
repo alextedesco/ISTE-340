@@ -7,13 +7,68 @@
     <!-- Sets the favicon to the Gatlinburg logo -->
     <link rel="icon" type="image/x-icon" href="assets/images/kiwi.svg">
     <title>Document</title>
+    <script>
+        async function doFetch (value) {
+            console.log (value);
+	        fetch ("assets/js/data.js")
+		        .then((response) => response.json())
+			        .then(data => constructor(data, value))
+				        .catch ((error) => {
+            console.error(error);
+            })
+        }
+
+        async function constructor (data, value) {
+            var tag = document.getElementsByTagName("body")[0];
+            var tag = tag.children[1];
+
+            var select = document.createElement("select");
+            select.textContent = data[value][0];
+            // select.id = jsonValue;
+
+            var defaultOption = document.createElement("option");
+            defaultOption.disabled = true;
+            defaultOption.selected = true;
+            defaultOption.appendChild (document.createTextNode ("-- Select an option --"));
+
+            var option1 = document.createElement ("option");
+            option1.textContent = data[value]["options"][0]
+            var option2 = document.createElement("option");
+            option2.textContent = data[value]["options"][1];
+
+            select.onchange = function () {
+                select.setAttribute ("name", select.value);
+                doFetch (select.getAttribute("value"));
+            }
+
+            select.appendChild(defaultOption);
+            select.appendChild(option1);
+            select.appendChild(option2);
+
+            tag.appendChild (select);
+    }
+
+    function submit () {
+
+
+    }
+
+    </script>
 </head>
-<body>
-    <div class="overlay">
+<body onload="doFetch('init');">
+    <h1>Welcome to Shop</h1>
 
-        <h1>Welcome to Alex's Coffee Shop</h1>
-
+    <div id="fetchContainer">
+        
     </div>
+
+    <br><br><br><br>
+    Name: <input type="text" placeholder="Enter Name:">
+    <br>
+    <input type="submit" value="submit" onclick="submit();">
+
+    <!-- Order Button that moves an image across the screen -->
+    <!--  -->
     
 </body>
 </html>
