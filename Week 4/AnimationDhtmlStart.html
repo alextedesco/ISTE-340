@@ -45,13 +45,13 @@
 	<script>
 		let target = document.getElementById("move1");
 
-		function simpleAni() {
+		function complexAni (dom, end, dx) {
 			let pos = parseInt(target.style.left);
-			if (pos < 300) {
+			if (pos < end) {
 				// move me...
-				target.style.left = pos + 5 + "px";
-				// if I'm not done...
-				requestAnimationFrame (simpleAni);
+				dom.style.left = pos + dx + "px";
+				// call again if not done...
+				requestAnimationFrame (function(){complexAni(dom, end, dx)});
 			}
 		}
 	</script>

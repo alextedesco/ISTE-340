@@ -1,74 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Sets the favicon to the Gatlinburg logo -->
     <link rel="icon" type="image/x-icon" href="assets/images/kiwi.svg">
     <title>Document</title>
+    <script type="text/javascript" src="assets/js/cookies.js"></script>
     <script>
-        async function doFetch (value) {
-            console.log (value);
-	        fetch ("assets/js/data.js")
-		        .then((response) => response.json())
-			        .then(data => constructor(data, value))
-				        .catch ((error) => {
-            console.error(error);
-            })
+        let useLocalStorage = false;
+        let clicked = false;
+        let globalAmount = 0;
+
+        async function doFetch() {
+            try {
+                const res = await fetch("assets/js/data.js");
+                jsonData = await res.json();
+
+                if (window.localStorage) {
+                    localStorage.setItem("data", JSON.stringify(jsonData));
+                    useLocalStorage = true;
+                } else if (navigator.cookieEnabled) {
+                    SetCookie("data", JSON.stringify(jsonData));
+                } else {
+                    window.location.href = "legacy.html";
+                }
+            } catch (err) {
+                console.log("error:", err);
+            }
+            constructor('init', globalAmount);
         }
 
-        async function constructor (data, value) {
-            var tag = document.getElementsByTagName("body")[0];
-            var tag = tag.children[1];
+        async function constructor(value, amount) {
 
+            var tag = document.getElementsByTagName("body")[0].children[0].children[1];
+            console.log(tag);
+            var div = document.createElement("div");
+            var reset = document.createElement("button");
             var select = document.createElement("select");
-            select.textContent = data[value][0];
-            // select.id = jsonValue;
+            var label = document.createElement("label");
 
-            var defaultOption = document.createElement("option");
-            defaultOption.disabled = true;
-            defaultOption.selected = true;
-            defaultOption.appendChild (document.createTextNode ("-- Select an option --"));
+            let data;
 
-            var option1 = document.createElement ("option");
-            option1.textContent = data[value]["options"][0]
-            var option2 = document.createElement("option");
-            option2.textContent = data[value]["options"][1];
-
-            select.onchange = function () {
-                select.setAttribute ("name", select.value);
-                doFetch (select.getAttribute("value"));
+            if (useLocalStorage) {
+                data = JSON.parse(window.localStorage.getItem("data"));
+            } else {
+                data = JSON.parse(GetCookie("data"));
             }
 
-            select.appendChild(defaultOption);
-            select.appendChild(option1);
-            select.appendChild(option2);
+            console.log(amount);
+            console.log(data.length);
 
-            tag.appendChild (select);
-    }
+            console.log("Amount of Divs: " + tag.children.length);
 
-    function submit () {
+            if (amount != globalAmount) {
+                console.log(tag.children);
+                while (tag.children.length > amount) {
+                    console.log(tag.children[amount]);
+                    tag.removeChild(tag.children[amount]);
+                    clicked = false;
+                }
+                globalAmount = amount
+                console.log("uh ohh!!");
+                console.log(globalAmount);
+                console.log(amount);
+                // select.removeChild()
+            } else {
+                console.log("we the same num");
+            }
+
+            globalAmount = amount
+
+            // console.log(data[value]["question"]);
+
+            if (globalAmount != 4) {
+                console.log(data);
+                console.log(value);
+                console.log(data[value]["question"]);
+
+                reset.textContent = "Reset";
+                label.textContent = data[value]["question"];
+                tag.appendChild(label);
+                console.log(globalAmount);
+                console.log(amount);
+                amount++;
+
+                select.onchange = function () {
+                    // Update the name attribute when the option changes
+                    select.setAttribute("name", select.value);
+                    constructor(select.name, (amount));
+                };
+                globalAmount++;
+                console.log(globalAmount);
+                console.log(amount);
+
+                var defaultOption = document.createElement("option");
+                defaultOption.disabled = true;
+                defaultOption.selected = true;
+                defaultOption.appendChild(document.createTextNode("-- Select an option --"));
+                select.appendChild(defaultOption);
+
+                for (i = 0, len = data[value]["options"].length; i < len; i++) {
+                    var option = document.createElement("option");
+                    option.textContent = data[value]["options"][i];
+                    select.appendChild(option);
+                }
+
+                if (amount == 0) {
+                    div.appendChild(label);
+                    div.appendChild(select);
+                    tag.appendChild(div);
+                    tag.append(reset);
+                } else {
+                    div.style.top = "0px";
+                    div.style.position = "relative";
+
+                    div.appendChild(label);
+                    div.appendChild(select);
+                    tag.appendChild(div);
+
+                    slideIn(div, 30, 5);
+                }
+            } else {
+                let output = document.createElement("p");
+                console.log("hi");
+                let selects = document.getElementsByTagName("select");
+                output.textContent = "You would like a " + selects[0].name + " -- "
+                    + selects[1].name + " -- "
+                    + selects[2].name + " -- "
+                    + selects[3].name + ". Press submit to confirm order";
+                output.style.top = "0px";
+                output.style.position = "relative";
+                tag.appendChild(output);
+                slideIn(output, 30, 5);
+                console.log("hi2")
+            }
+        }
+
+        function slideIn(element, endPosition, dx) {
+            let currentPosition = 0;
+
+            function animate() {
+                currentPosition += dx;
+                element.style.top = currentPosition + "px";
+
+                if (currentPosition < endPosition) {
+                    requestAnimationFrame(animate);
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        function reset(value, amount) {
+            constructor(value, amount);
+        }
+
+        function submit() {
+            console.log ("test")
+            if (!clicked) {
+                if (document.getElementsByTagName("input")[0].value == '') {
+                    alert("Please enter a name!");
+                } else {
+                    if (useLocalStorage) {
+                        data = JSON.parse(window.localStorage.getItem("data"));
+                    } else {
+                        data = JSON.parse(GetCookie("data"));
+                    }
+
+                    let container = document.getElementById("fetchContainer");
+                    let selects = document.getElementsByTagName("select");
+                    let image = data[selects[selects.length - 2].name]["img"];
+
+                    let imgElement = document.createElement("img");
+                    imgElement.src = image;
 
 
-    }
+                    let figure = document.createElement("figure");
+                    let figCaption = document.createElement("figcaption");
+                    figCaption.textContent = "Order for " + document.getElementsByTagName("input")[0].value;
+                    figure.appendChild(imgElement);
+                    figure.appendChild(figCaption);
+                    figure.style.float = "right";
+                    figure.style.width = "200px";
 
+                    container.appendChild (figure);
+                    clicked = true;
+                }
+            }
+        }
     </script>
 </head>
-<body onload="doFetch('init');">
-    <h1>Welcome to Shop</h1>
 
-    <div id="fetchContainer">
+<body onload="doFetch();">
+    <div class="overlay">
+        <h1>Welcome to Shop</h1>
+
+        <div id="fetchContainer" style="position: relative;top: 0px;"></div>
+
+        <br><br>
+        <button onclick="reset('init', 0);">Reset</button>
+
+        <br>
         
+        <br><br>
+        Name: <input type="text" placeholder="Enter Name:">
+        <br>
+        <input type="submit" value="submit" onclick="submit();">
     </div>
-
-    <br><br><br><br>
-    Name: <input type="text" placeholder="Enter Name:">
-    <br>
-    <input type="submit" value="submit" onclick="submit();">
-
-    <!-- Order Button that moves an image across the screen -->
-    <!--  -->
-    
 </body>
+
 </html>

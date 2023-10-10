@@ -13,11 +13,13 @@
     },
     "Dark Roast": {
         "question": "What kind of dark roast?",
-        "options": ["Italian Roast", "French Roast"]
+        "options": ["Italian Roast", "French Roast"],
+        "img": ["assets/images/dark_roast.png"]
     },
     "Light Roast": {
         "question": "What kind of light roast?",
-        "options": ["Ethiopian Yirgacheffe", "Costa Rican Tarrazu"]
+        "options": ["Ethiopian Yirgacheffe", "Costa Rican Tarrazu"],
+        "img": ["assets/images/light_roast.png"]
     },
     "Espresso": {
         "question": "Would you like your espresso with milk or water?",
@@ -25,11 +27,13 @@
     },
     "Water (Americano)": {
         "question": "Which flavor shot would you like",
-        "options": ["Mocha", "Hazelnut"]
+        "options": ["Mocha", "Hazelnut"],
+        "img": ["assets/images/espresso.png"]
     },
     "Milk": {
         "question": "What kind of milk?",
-        "options": ["Steamed Milk (Latte)", "Foamed Milk (Cappuccino)"]
+        "options": ["Steamed Milk (Latte)", "Foamed Milk (Cappuccino)"],
+        "img": ["assets/images/espresso.png"]
     },
     "Tea": {
         "question": "How would you like your tea",
@@ -54,6 +58,7 @@
     "Black Tea": {
         "question": "What type of sweetener?",
         "options": ["Honey", "Sugar"]
+        
     },
     "Boba Tea": {
         "question": "What type of Boba balls?",
