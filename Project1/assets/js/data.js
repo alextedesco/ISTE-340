@@ -45,11 +45,13 @@
     },
     "Morning": {
         "question": "Which morning tea do you want?",
-        "options": ["English Breakfast", "Earl Grey"]
+        "options": ["English Breakfast", "Earl Grey"],
+        "img": ["assets/images/tea.png"]
     },
     "Sleepy Time": {
         "question": "Which sleepy time tea do you want?",
-        "options": ["Chamomile", "Lavender"]
+        "options": ["Chamomile", "Lavender"],
+        "img": ["assets/images/tea.png"]
     },
     "Cold": {
         "question": "What kind of cold tea do you want?",
@@ -57,11 +59,13 @@
     },
     "Black Tea": {
         "question": "What type of sweetener?",
-        "options": ["Honey", "Sugar"]
+        "options": ["Honey", "Sugar"],
+        "img": ["assets/images/black_tea.png"]
         
     },
     "Boba Tea": {
         "question": "What type of Boba balls?",
-        "options": ["Tapioca Balls", "Fruit Balls"]
+        "options": ["Tapioca Balls", "Fruit Balls"],
+        "img": ["assets/images/boba_tea.png"]
     }
 }

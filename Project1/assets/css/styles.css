@@ -6,7 +6,6 @@ html, body {
 body {
     background-image: url('../images/coffee_shop.jpg');
     /* background-image: url("../images/coffee_shop2.jpg"); */
-    /* background-color: brown; */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -14,11 +13,6 @@ body {
     font-family: "Open Sans", sans-serif;
     color: white;
     width: 60%;
-    /* border: 1px pink solid; */
-    
-    /* height: 100vh; */
-    /* height: 650px; */
-    /* color: #ece8e8; */
 }
 
 .overlay {
@@ -32,32 +26,24 @@ body {
 
 #fetchContainer {
     width: 60%;
-    /* border: 1px pink solid; */
 }
 
 body, div, button, input {
     padding-left: 1em;
-    
-}
-
-img {
-    float: right;
-    width: 50px;
 }
 
 figure {
-    display: block; /* Change the display property to block */
-    margin: 0 auto; /* Center the figure horizontally if needed */
-    text-align: center; /* Center the content inside the figure */
-  }
-  
-  figcaption {
-    display: block; /* Ensure the figcaption takes full width */
-    text-align: center; /* Center the text inside the figcaption */
-    margin-top: 10px; /* Add some space between the figure and figcaption */
-  }
-  
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
 
+figcaption {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
 
-
-
+li a {
+    color: white;
+}

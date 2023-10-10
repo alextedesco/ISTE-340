@@ -1,89 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+Name: Alex Tedesco
+Class: ISTE-340
+Assignment: Project 1
+-->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" type="image/x-icon" href="assets/images/kiwi.svg">
-    <title>Document</title>
+    <title>Project 1</title>
     <script type="text/javascript" src="assets/js/cookies.js"></script>
     <script>
+        // Global Variables:
         let useLocalStorage = false;
         let clicked = false;
+        let completed = false;
         let globalAmount = 0;
+        let max;
 
         async function doFetch() {
+            /*AJAX Fetch call to store the JSON data in localStorage or as Cookies*/
             try {
                 const res = await fetch("assets/js/data.js");
                 jsonData = await res.json();
 
+                // Checks if browser supports localStorage
                 if (window.localStorage) {
                     localStorage.setItem("data", JSON.stringify(jsonData));
                     useLocalStorage = true;
+                // If it doesn't it uses cookies instead
                 } else if (navigator.cookieEnabled) {
                     SetCookie("data", JSON.stringify(jsonData));
+                // If the browser doesn't support cookies, it redirects to the legacy page
                 } else {
                     window.location.href = "legacy.html";
                 }
             } catch (err) {
                 console.log("error:", err);
             }
+            // Build the initial select
             constructor('init', globalAmount);
         }
 
         async function constructor(value, amount) {
 
+            // Obtains the fetchContainer element
             var tag = document.getElementsByTagName("body")[0].children[0].children[1];
-            console.log(tag);
+
+            // Create various elements for the select to be appended
             var div = document.createElement("div");
-            var reset = document.createElement("button");
             var select = document.createElement("select");
             var label = document.createElement("label");
 
-            let data;
+            // Data variable to be set with JSON data
+            let data = getData();
 
-            if (useLocalStorage) {
-                data = JSON.parse(window.localStorage.getItem("data"));
-            } else {
-                data = JSON.parse(GetCookie("data"));
-            }
-
-            console.log(amount);
-            console.log(data.length);
-
-            console.log("Amount of Divs: " + tag.children.length);
-
+            // Checks if the amounts match when function is called. If they didn't it deletes the children after that select element
             if (amount != globalAmount) {
-                console.log(tag.children);
                 while (tag.children.length > amount) {
-                    console.log(tag.children[amount]);
                     tag.removeChild(tag.children[amount]);
                     clicked = false;
+                    completed = false;
                 }
                 globalAmount = amount
-                console.log("uh ohh!!");
-                console.log(globalAmount);
-                console.log(amount);
-                // select.removeChild()
-            } else {
-                console.log("we the same num");
             }
 
+            // Resets the globalAmount to prevent error
             globalAmount = amount
 
-            // console.log(data[value]["question"]);
+            // Each question has two choices so this checks the logarithmic equation to see how many branches there are in the JSON tree
+            max = Math.ceil(Math.log2(Object.keys(data).length));
 
-            if (globalAmount != 4) {
-                console.log(data);
-                console.log(value);
-                console.log(data[value]["question"]);
-
-                reset.textContent = "Reset";
+            // Checks if the globalAmount has reached the max, if it has it makes the output
+            if (globalAmount != max) {
                 label.textContent = data[value]["question"];
                 tag.appendChild(label);
-                console.log(globalAmount);
-                console.log(amount);
+
                 amount++;
 
                 select.onchange = function () {
@@ -92,9 +87,8 @@
                     constructor(select.name, (amount));
                 };
                 globalAmount++;
-                console.log(globalAmount);
-                console.log(amount);
 
+                // Creates options elements for the Select
                 var defaultOption = document.createElement("option");
                 defaultOption.disabled = true;
                 defaultOption.selected = true;
@@ -107,11 +101,13 @@
                     select.appendChild(option);
                 }
 
-                if (amount == 0) {
+                // Checks if the amount is 1 so that no animation is done on the init
+                if (amount == 1) {
                     div.appendChild(label);
                     div.appendChild(select);
                     tag.appendChild(div);
-                    tag.append(reset);
+                    div.style.top = "30px";
+                    div.style.position = "relative";
                 } else {
                     div.style.top = "0px";
                     div.style.position = "relative";
@@ -120,11 +116,11 @@
                     div.appendChild(select);
                     tag.appendChild(div);
 
-                    slideIn(div, 30, 5);
+                    slideIn(div, 30, 3);
                 }
+                // Output for order
             } else {
                 let output = document.createElement("p");
-                console.log("hi");
                 let selects = document.getElementsByTagName("select");
                 output.textContent = "You would like a " + selects[0].name + " -- "
                     + selects[1].name + " -- "
@@ -132,13 +128,27 @@
                     + selects[3].name + ". Press submit to confirm order";
                 output.style.top = "0px";
                 output.style.position = "relative";
-                tag.appendChild(output);
-                slideIn(output, 30, 5);
-                console.log("hi2")
+                // Checks if the form has been completed
+                if (!completed) {
+                    tag.appendChild(output);
+                    slideIn(output, 30, 5);
+                    completed = true;
+                // If it was not completed, it will remove the previous output and replace it
+                } else {
+                    while (tag.children.length > amount) {
+                        tag.removeChild(tag.children[amount]);
+                        clicked = false;
+                        completed = false;
+                    }
+                    tag.appendChild(output);
+                    slideIn(output, 30, 5);
+                    completed = true;
+                }
             }
         }
 
         function slideIn(element, endPosition, dx) {
+            /*Animation frame that slides the select element down*/
             let currentPosition = 0;
 
             function animate() {
@@ -149,65 +159,93 @@
                     requestAnimationFrame(animate);
                 }
             }
-
             requestAnimationFrame(animate);
         }
 
-        function reset(value, amount) {
-            constructor(value, amount);
+        function reset() {
+            /*Called when the Selects need to be reset back to the init*/
+            constructor('init', 0);
         }
 
-        function submit() {
-            console.log ("test")
+        function submit(string) {
+            /*Sanitized and submits the data. Makes the order (figure)*/
+
+            // Splits the name into an array
+            let newString = string.split('');
+
+            // Randomly shuffles the string array to make the name wrong, the Starbucks stereotype
+            for (let i = newString.length - 1; i > 0; i--) {
+                let rng = Math.floor(Math.random() * (i + 1));
+                [newString[i], newString[rng]] = [newString[rng], newString[i]];
+            }
+
+            // Converts the shuffled array back to a string
+            let starbucksName = newString.join('');
+
+            // Checks if the order has already been ordered
             if (!clicked) {
+                // Checks if the name input is empty
                 if (document.getElementsByTagName("input")[0].value == '') {
                     alert("Please enter a name!");
+                // Checks if the form is completed
+                } else if (globalAmount != max || document.getElementsByTagName("select")[max - 1].value == "-- Select an option --") {
+                    alert("Please finish the form");
+                // Determines whether to use localStorage or Cookies
                 } else {
-                    if (useLocalStorage) {
-                        data = JSON.parse(window.localStorage.getItem("data"));
-                    } else {
-                        data = JSON.parse(GetCookie("data"));
-                    }
+                    let data = getData();
 
+                    // Obtains elements and JSON data
                     let container = document.getElementById("fetchContainer");
                     let selects = document.getElementsByTagName("select");
                     let image = data[selects[selects.length - 2].name]["img"];
 
+                    // Creates img and figure elements
                     let imgElement = document.createElement("img");
                     imgElement.src = image;
-
+                    imgElement.style.width = "200px";
 
                     let figure = document.createElement("figure");
                     let figCaption = document.createElement("figcaption");
-                    figCaption.textContent = "Order for " + document.getElementsByTagName("input")[0].value;
+                    figCaption.textContent = "Order for " + starbucksName;
                     figure.appendChild(imgElement);
                     figure.appendChild(figCaption);
                     figure.style.float = "right";
-                    figure.style.width = "200px";
 
-                    container.appendChild (figure);
+                    container.appendChild(figure);
+                    // Sets the global clicked variable to true preventing more orders
                     clicked = true;
                 }
             }
+        }
+
+        function getData() {
+            /*Helper function that checks where to use localStorage or cookie
+            and retrieves and returns the data*/
+            if (useLocalStorage) {
+                data = JSON.parse(window.localStorage.getItem("data"));
+            } else {
+                data = JSON.parse(GetCookie("data"));
+            }
+            return data;
         }
     </script>
 </head>
 
 <body onload="doFetch();">
     <div class="overlay">
-        <h1>Welcome to Shop</h1>
+        <h1>Welcome to Alex Tedesco's Café</h1>
 
-        <div id="fetchContainer" style="position: relative;top: 0px;"></div>
+        <form id="fetchContainer" style="position: relative;top: 0px;"></form>
 
         <br><br>
-        <button onclick="reset('init', 0);">Reset</button>
+        <button onclick="reset();">Reset</button>
 
         <br>
-        
+
         <br><br>
         Name: <input type="text" placeholder="Enter Name:">
         <br>
-        <input type="submit" value="submit" onclick="submit();">
+        <input type="submit" value="submit" onclick="submit(document.getElementsByTagName('input')[0].value);">
     </div>
 </body>
 
