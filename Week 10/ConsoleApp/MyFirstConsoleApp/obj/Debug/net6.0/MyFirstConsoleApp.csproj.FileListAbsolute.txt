@@ -1,0 +1,14 @@
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\bin\Debug\net6.0\MyFirstConsoleApp.exe
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\bin\Debug\net6.0\MyFirstConsoleApp.deps.json
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\bin\Debug\net6.0\MyFirstConsoleApp.runtimeconfig.json
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\bin\Debug\net6.0\MyFirstConsoleApp.dll
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\bin\Debug\net6.0\MyFirstConsoleApp.pdb
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\obj\Debug\net6.0\MyFirstConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\obj\Debug\net6.0\MyFirstConsoleApp.AssemblyInfoInputs.cache
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\obj\Debug\net6.0\MyFirstConsoleApp.AssemblyInfo.cs
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\obj\Debug\net6.0\MyFirstConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\obj\Debug\net6.0\MyFirstConsoleApp.dll
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\obj\Debug\net6.0\refint\MyFirstConsoleApp.dll
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\obj\Debug\net6.0\MyFirstConsoleApp.pdb
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\obj\Debug\net6.0\MyFirstConsoleApp.genruntimeconfig.cache
+C:\Users\alexa\Documents\Code\ISTE-340\Week 10\ConsoleApp\MyFirstConsoleApp\obj\Debug\net6.0\ref\MyFirstConsoleApp.dll
