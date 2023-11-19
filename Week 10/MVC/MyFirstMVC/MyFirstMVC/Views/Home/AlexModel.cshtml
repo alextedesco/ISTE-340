@@ -1,0 +1,14 @@
+﻿@model MyFirstMVC.Models.AlexModel
+@{
+    ViewData["Title"] = Model.PageTitle;
+}
+
+<h1>@Model.Title</h1>
+<div>@Model.Description</div>
+
+<ul>
+    @for (var i = 0; i < Model.HowMany; i++)
+    {
+        <li>Number @i</li>
+    }
+</ul>

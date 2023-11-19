@@ -13,6 +13,17 @@ namespace MyFirstMVC.Controllers
             _logger = logger;
         }
 
+        public IActionResult AlexModel()
+        {
+            // get my model
+            var getAlexModel = new AlexModel();
+            getAlexModel.Title = "Some hard coded title...";
+            getAlexModel.Description = "lots of words and words and words";
+            getAlexModel.PageTitle = "Look up top!";
+            getAlexModel.HowMany = 50;
+            return View(getAlexModel);
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -22,6 +33,13 @@ namespace MyFirstMVC.Controllers
         {
             return View();
         }
+
+        public IActionResult AlexNoModel()
+        {
+            return View();
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

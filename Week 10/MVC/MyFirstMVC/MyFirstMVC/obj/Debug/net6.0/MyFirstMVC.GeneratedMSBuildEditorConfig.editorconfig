@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\alexa\Documents\Code\ISTE-340\Week 10\MVC\MyFirstMVC\MyFirstMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/alexa/Documents/Code/ISTE-340/Week 10/MVC/MyFirstMVC/MyFirstMVC/Views/Home/AlexModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbGV4TW9kZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alexa/Documents/Code/ISTE-340/Week 10/MVC/MyFirstMVC/MyFirstMVC/Views/Home/AlexNoModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbGV4Tm9Nb2RlbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/alexa/Documents/Code/ISTE-340/Week 10/MVC/MyFirstMVC/MyFirstMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
