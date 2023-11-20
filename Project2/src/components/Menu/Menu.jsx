@@ -11,6 +11,7 @@ const Menu = ({ handleAppSectionChange }) => {
   };
 
   return (
+    // Navigation with each page
     <nav className="menu">
       <ul>
         <li><a href="/about" onClick={(e) => handleClick('about', e)} style={{color: "#F76902", fontWeight: "500"}}>About</a></li>

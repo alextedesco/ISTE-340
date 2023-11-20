@@ -2,47 +2,47 @@
 import React, { useState } from 'react'
 import getData from '../../utils/getData'
 import MinorAccordion from './MinorAccordion';
-// import './Menu.css'
 
 const Minors = () => {
     //instance vars
     const [minLoaded, setMinLoaded] = useState(false);
     const [minObj, setMinObj] = useState();
-    const [progressValue, setProgressValue] = useState(0);
+    const [courseObj, setCourseObj] = React.useState(null);
+    const [courseLoaded, setCourseLoaded] = React.useState(false);
 
+    // Gets the minor information from the API
     React.useEffect(() => {
         getData('minors/')
             .then((json) => {
-                setProgressValue(25);
-                console.log('minors', json);
-                setProgressValue(50);
                 setMinObj(json);
-                setProgressValue(75);
                 setMinLoaded(true);
-                setProgressValue(100);
+            })
+    // Gets course information of every course in iSchool from the API
+        getData('course/')
+            .then((json) => {
+                setCourseObj(json);
+                setCourseLoaded(true);
             })
     }, []);
 
-    // Check if minObj is not available yet
-    if (!minLoaded) {
+    // Check if minObj or courseObj is not available yet
+    if (!minLoaded || !courseLoaded) {
         return (
-            <section className="Minors">
+            <section className="MinorsCourses">
+                <h1>iSchool Minors</h1>
                 <h2>Loading...</h2>
-                <progress value={progressValue} max="100"></progress>
             </section>
         );
     }
 
-    console.log ("Hi");
-    console.log(minObj.UgMinors);
-
     return (
         <>
-        <h1>Minors</h1>
+            <h1>Minors</h1>
             <div className="minorList">
-                {minObj.UgMinors.map((m) =>
-                    <div>
-                        <MinorAccordion {...m} />
+                {minObj.UgMinors.map((m, index) =>
+                    <div key={index}>
+                        {/* Passes all the course and minor information into an accordion */}
+                        <MinorAccordion {...{courseObj: courseObj, ...m }} />
                     </div>
                 )}
             </div>

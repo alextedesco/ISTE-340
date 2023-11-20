@@ -8,6 +8,7 @@ const PeopleGroup=({title, pepGroupObj})=>{
             <h4>{title}</h4>
             <div className="peopleList">
                 {pepGroupObj.map((p)=>
+                    
                     <div className="peopleListItem" key={p.username}>
                         <img src={p.imagePath}/>
                         <PeopleModal {...p}/>

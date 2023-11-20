@@ -15,7 +15,6 @@ const People = () => {
      React.useEffect(()=>{
          getData('people/')
              .then((json) =>{
-                 console.log('peps', json);
                  setPepObj(json);
                  setPepLoaded(true);
              })
@@ -28,9 +27,6 @@ const People = () => {
              <h3>Loading...</h3>
          </>
      )
-
-     console.log (pepObj);
-     console.log (pepObj.faculty);
 
      const panes = [
         { menuItem: 'Faculty', render: () => <Tab.Pane>
@@ -54,53 +50,3 @@ const People = () => {
 }
 
 export default People
-
-/*
-const People=()=>{
-    //instance vars
-    const [pepLoaded, setPepLoaded] = useState(false);
-    const [pepObj, setPepObj] = useState();
-
-    React.useEffect(()=>{
-        getData('people/')
-            .then((json) =>{
-                console.log('peps', json);
-                setPepObj(json);
-                setPepLoaded(true);
-            })
-    }, []);
-
-    if(!pepLoaded) return(
-        <>
-            <h1>Our People</h1>
-            <h3>Loading...</h3>
-        </>
-    )
-
-    return(
-        <>
-            <h2>{pepObj.title}</h2>
-            <h3>{pepObj.subTitle}</h3>
-            <h3>Faculty</h3>
-            <section className="peopleList">
-             
-                { pepObj.faculty.map( (p) =>
-                    <div className="peopleListItem">
-                        <h3>{p.name}</h3>
-                        <img src={p.imagePath} alt="person"/>
-                    </div>
-                ) }
-            </section>
-            <h3>Staff</h3>
-            <section className="peopleList">
-                { pepObj.staff.map( (p) =>
-                    <div className="peopleListItem">
-                        <h3>{p.name}</h3>
-                        <img src={p.imagePath} alt="person"/>
-                    </div>
-                ) }
-            </section>
-        </>
-    )
-}
-export default People;*/

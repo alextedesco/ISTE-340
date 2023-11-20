@@ -1,11 +1,7 @@
-//imports
-import React, { useState } from 'react'
-// import './Menu.css'
+// Imports
+import AboutImageList from './AboutImageList';
 
 const About = ({ aboutObj }) => {
-
-    console.log('Received data in About component:', aboutObj);
-
 
     // Check if aboutObj is not available yet
     if (!aboutObj) {
@@ -18,6 +14,7 @@ const About = ({ aboutObj }) => {
 
     return (
         <section className="About">
+            {/* About API information for the iSchool */}
             <h1>Welcome to the iSchool</h1>
             <h2>{aboutObj.title}</h2>
             <h3>{aboutObj.description}</h3>
@@ -26,8 +23,12 @@ const About = ({ aboutObj }) => {
                 <h5>{aboutObj.quoteAuthor}</h5>
             </div>
 
-            <h3><a href='../../assets/golisano.pdf'>Map of Golisano</a></h3>
+            {/* Image List of Golisano */}
+            <AboutImageList />
 
+            <h3><a href='https://people.rit.edu/act2076/ISTE340/assets/golisano.pdf' style={{ color: "#F76902" }}>Map of Golisano</a></h3>
+
+            {/* Google Maps embed of Golisano */}
             <iframe
                 src="https://maps.google.com/maps?width=300%25&amp;height=600&amp;hl=en&amp;q=Golisano%20Computing+(My%20Business%20Name)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 style={{
@@ -35,16 +36,12 @@ const About = ({ aboutObj }) => {
                     padding: "1em",
                     width: "700px",
                     height: "500px"
-
                 }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade">
             </iframe>
-
-
         </section>
-
     );
 };
 

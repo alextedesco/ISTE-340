@@ -1,35 +1,29 @@
-import * as React from 'react';
+// Imports
+import React from 'react'
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Button from '@mui/material/Button';
+import MinorCourse from './MinorCourse'
 
+// CSS style variable
 const style = {
   marginBottom: "10px",
   textAlign: "left"
-  // position: 'absolute',
-  // top: '50%',
-  // left: '50%',
-  // transform: 'translate(-50%, -50%)',
-  // width: 400,
-  // bgcolor: 'background.paper',
-  // border: '2px solid #000',
-  // boxShadow: 24,
-  // p: 4,
 };
 
-export default function MinorAccordion({ courses, description, name, title }) {
+const MinorAccordion = ({ courseObj, courses, description, name, title }) => {
+    //instance vars
   const [expanded, setExpanded] = React.useState(false);
-  const [courseObj, setCourseObj] = React.useState(null);
-  const [courseLoaded, setCourseLoaded] = React.useState(false);
 
+  // Expands the Accordion when clicked
   const handleToggle = () => {
     setExpanded((prevExpanded) => !prevExpanded);
   };
 
   return (
+    // Builds the accordion with the minor information
     <Accordion expanded={expanded} onChange={handleToggle} sx={style}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
         <Typography variant="h5" component="h2">
@@ -45,12 +39,19 @@ export default function MinorAccordion({ courses, description, name, title }) {
             Courses:
           </Typography>
           <ul>
+            {/* Passes the current indexed course and courseObj which has
+            all the courses in the iSchool. The MinorCourse component will filter 
+            through the object until it finds the indexed course.*/}
             {courses.map((course, index) => (
-              <li key={index}>{course}</li>
+              <li key={index}>
+                  <MinorCourse courseObj={courseObj} course={course} />
+              </li>
             ))}
           </ul>
+
         </div>
       </AccordionDetails>
     </Accordion>
   );
 }
+export default MinorAccordion
