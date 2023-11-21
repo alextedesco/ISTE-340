@@ -28,3 +28,6 @@ C:\Users\alexa\Documents\Code\ISTE-340\Week 11\MVC\Project3\obj\Debug\net6.0\ref
 C:\Users\alexa\Documents\Code\ISTE-340\Week 11\MVC\Project3\obj\Debug\net6.0\Project3.pdb
 C:\Users\alexa\Documents\Code\ISTE-340\Week 11\MVC\Project3\obj\Debug\net6.0\Project3.genruntimeconfig.cache
 C:\Users\alexa\Documents\Code\ISTE-340\Week 11\MVC\Project3\obj\Debug\net6.0\ref\Project3.dll
+C:\Users\alexa\Documents\Code\ISTE-340\Week 11\MVC\Project3\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\alexa\Documents\Code\ISTE-340\Week 11\MVC\Project3\obj\Debug\net6.0\Project3.csproj.AssemblyReference.cache
+C:\Users\alexa\Documents\Code\ISTE-340\Week 11\MVC\Project3\obj\Debug\net6.0\Project3.csproj.CopyComplete

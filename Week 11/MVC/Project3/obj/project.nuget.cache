@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SXl0SpqLPaB1M4RctvOKf+GctTssu2aLpN4r/EPukHtFzrXHroUGdGLJzal2h/z7xUqfQ600pFZoZn6XbM8gag==",
+  "dgSpecHash": "nHeI8j5nSiYMneTGwYX1c2rl4UU5GeKyOSTR97Va5nJnWrxVP6qoo6G+mEZKce4ggoSzOBYniTW9aqXrmBzdcA==",
   "success": true,
   "projectFilePath": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\Project3.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\alexa\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

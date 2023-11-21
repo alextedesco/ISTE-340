@@ -6,5 +6,6 @@ namespace Project3.Models
         public string description { get; set; }
         public string quote { get; set; }
         public string quoteAuthor { get; set; }
+        public string pageTitle { get; set; }
     }
 }

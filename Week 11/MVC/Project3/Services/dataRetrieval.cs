@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Headers;
 namespace Project3.Services
 {
-    public class dataRetrieval
+    public class DataRetrieval
     {
         /*
          * Task vs Thread
@@ -19,7 +19,7 @@ namespace Project3.Services
             using (var client = new HttpClient ())
             {
                 // set up the base
-                client.BaseAddress = new Uri ("http://www.iste.rit.edu/api/");
+                client.BaseAddress = new Uri ("http://www.ist.rit.edu/api/");
                 // clean it up
                 client.DefaultRequestHeaders.Clear ();
                 // set the type

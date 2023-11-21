@@ -16,3 +16,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Added Styles */
+about {
+    padding: 2.5%;
+    margin: 4.5%;
+    border: solid 5px orange;
+    text-align: center;
+}
