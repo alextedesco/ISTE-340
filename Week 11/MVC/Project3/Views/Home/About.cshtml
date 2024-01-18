@@ -4,8 +4,40 @@
 }
 
 <h1>@Model.title</h1>
+
+@*Basic iSchool information*@
 <section class="about">
     <p>@Model.description</p>
     <p>@Model.quote</p>
     <p>--- @Model.quoteAuthor</p>
+
+    @*Image Gallery with various photos of Golisano*@
+    <div id="basicExample">
+        <a href="~/assets/computing-departments-jumbotron.jpg">
+            <img src="~/assets/computing-departments-jumbotron.jpg" alt="Front of Golisano" />
+        </a>
+
+        <a href="~/assets/DSC_0074.jpg">
+            <img src="~/assets/DSC_0074.jpg" alt="Golisano Computer Lab" />
+        </a>
+
+        <a href="~/assets/golisano.jpg">
+            <img src="~/assets/golisano.jpg" alt="Front of Golisano 2" />
+        </a>
+
+        <a href="~/assets/images.jpg">
+            <img src="~/assets/images.jpg" alt="2nd Floor of Golisano Atrium" />
+        </a>
+    </div>
+
+
+    @*Google Maps Embed of Golisano*@
+    <iframe
+        src="https://maps.google.com/maps?width=300%25&amp;height=600&amp;hl=en&amp;q=Golisano%20Computing+(My%20Business%20Name)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        style="border: 0; padding: 1em; width: 700px; height: 500px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
 </section>

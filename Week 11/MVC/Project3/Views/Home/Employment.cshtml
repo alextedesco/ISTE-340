@@ -1,0 +1,106 @@
+﻿@model Project3.Models.EmploymentModel
+@{
+    ViewData["Title"] = Model.pageTitle;
+}
+
+<hr/>
+
+<section id="employment-info">
+
+<h1>@Model.introduction.title</h1>
+
+@*Outputs various data about employment in the iSchool*@
+@foreach (var content in @Model.introduction.content)
+{
+    <div>
+       <h2>@content.title</h2>
+       <h3>@content.description</h3>
+    </div>
+}
+
+<h2>@Model.degreeStatistics.title</h2>
+
+@*Outputs various degree information in the iSchool for employment*@
+@foreach (var stat in @Model.degreeStatistics.statistics)
+{
+    <div>
+        <h2>@stat.description</h2>
+        <h3>@stat.value</h3>
+    </div>
+}
+
+<h2>@Model.employers.title:</h2>
+
+@*List of five random employers that hire in the iSchool*@
+<ul class="list" id="employer-list">
+    @foreach (var employer in Model.employers.employerNames)
+    {
+        <li>@employer</li>
+    }
+</ul>
+</section>
+
+
+<section id="employment-table">
+    @*Tabs that seperate the Co-Op and Employment Tables*@
+    <div id="empTab">
+        <ul>
+            <li><a href="#one">Coop Table</a></li>
+            <li><a href="#two">Employment Table</a></li>
+        </ul>
+        <div id="one">
+            <!-- DataTable for Coop Table -->
+            <table id="coopTable" class="display">
+                <thead>
+                    <tr>
+                        <th>Employer</th>
+                        <th>Degree</th>
+                        <th>City</th>
+                        <th>Term</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @*Iterates through every co-op in the iSchool*@
+                    @foreach (var item in Model.coopTable.coopInformation)
+                    {
+                        <tr>
+                            <td>@item.employer</td>
+                            <td>@item.degree</td>
+                            <td>@item.city</td>
+                            <td>@item.term</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div id="two">
+            <!-- DataTable for Employment Table -->
+            <table id="employmentTable" class="display">
+                <thead>
+                    <tr>
+                        <th>Employer</th>
+                        <th>Degree</th>
+                        <th>City</th>
+                        <th>Title</th>
+                        <th>Start Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @*Iterates through every job available*@
+                    @foreach (var item in Model.employmentTable.professionalEmploymentInformation)
+                    {
+                        <tr>
+                            <td>@item.employer</td>
+                            <td>@item.degree</td>
+                            <td>@item.city</td>
+                            <td>@item.title</td>
+                            <td>@item.startDate</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+

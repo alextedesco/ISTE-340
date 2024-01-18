@@ -1,0 +1,36 @@
+﻿@*Imports: *@
+@using Newtonsoft.Json;
+@model Project3.Models.MinorModel
+@{
+    ViewData["Title"] = Model.pageTitle;
+}
+
+@* Modal for the Dialog box that contains the information about the course*@
+<div id="minor-modal" style="display: none;">
+    <p id="minor-modal-content"></p>
+</div>
+
+<h1>Minors</h1>
+
+<hr />
+
+@foreach (var minor in @Model.UgMinors)
+{
+    // Creates an accordion for every Minor in the iSchool
+    <div class="testAcc" style="margin-bottom: 10px;">
+        <h3>@minor.title</h3>
+        <div>
+            <p>@minor.description</p>
+            <h6>Courses:</h6>
+            <ul class="list" id="course-list">
+                @foreach (var course in @minor.courses)
+                {
+                    // Looks for the matching course in the Courses model and then converts the course information to JSON and 
+                    var courseInfo = JsonConvert.SerializeObject(Model.Courses.FirstOrDefault(c => c.courseID == course));
+                    // Clickable course that reveals more information about the course in the minor
+                    <li class="clickable" data-course-info='@JsonConvert.SerializeObject(Model.Courses.FirstOrDefault(c => c.courseID == course))'>@course</li>
+                }
+            </ul>
+        </div>
+    </div>
+}

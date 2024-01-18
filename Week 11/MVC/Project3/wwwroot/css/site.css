@@ -1,26 +1,198 @@
+/* Alex Tedesco */
+/* Project 3 */
+/* ISTE-340 */
+
+
+/* Gloabl Font Size */
 html {
   font-size: 14px;
 }
 
+/* Media query for larger mobile devices*/
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
 }
 
+/* Document layout */
 html {
   position: relative;
   min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin: 0;
+    place-items: center;
 }
 
-/* Added Styles */
+/*Makes the navigation bar sticky and customizes to desired design*/
+#stick {
+    text-align: center;
+    position: sticky;
+    top: 0px;
+    margin: 0px;
+    background-color: white;
+    color: black;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Navigation Bar Styles */
+
+.navbar nav {
+    z-index: 1;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.navbar a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #F76902;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.navbar a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+/* Media query for nav on smaller mobile devices */
+@media screen and (max-height: 300px) {
+    .navbar ul {
+        margin-top: 40px;
+    }
+}
+
+/* Header Sizes */
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 700px;
+}
+
+
+/* Specific Page Styles */
 about {
     padding: 2.5%;
     margin: 4.5%;
     border: solid 5px orange;
     text-align: center;
+}
+
+#employment-info {
+    text-align: center;
+}
+/* Makes the list of information like the courses appear in a nice horizontal line */
+.list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none; 
+    padding: 0; 
+}
+
+/* Style each list item */
+.list li {
+    padding: 10px;
+}
+
+/* Sets the cursor to be a pointer to make it obviously clickable to the user */
+#course-list {
+    cursor: pointer;
+}
+
+/* Places the people of the iSchool in a nice repeating grid */
+.person {
+    display: inline-grid;
+    grid-template-columns: repeat(1=1, auto);
+    grid-column-gap: 10px;
+    text-align: center;
+}
+
+/* Makes the clickable name obvious to the user */
+.person h3 {
+    cursor: pointer;
+}
+
+/* Makes every image the size without skewing/stretching them */
+.person img {
+    width: 150px;
+    height: 150px;
+    object-fit: fill;
+}
+
+/* Accordion Style Ovverides*/
+
+/* Hide the empty square default close button */
+.ui-dialog-titlebar-close {
+    display: none; 
+}
+
+.ui-accordion-header {
+    background-color: #F76902;
+    color: #F76902;
+    border: 1px solid #F76902;
+}
+
+.ui-accordion-content {
+    background-color: #ecf0f1; 
+    color: black; 
+    border: 1px solid #bdc3c7;
+}
+
+
+#basicExample {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    max-height: 500px;
+}
+
+#basicExample a {
+    flex: 1;
+    margin: 0 1%;
+    box-sizing: border-box;
+}
+
+#basicExample img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

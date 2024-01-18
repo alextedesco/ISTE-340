@@ -1,0 +1,50 @@
+﻿@* Imports: *@
+@using Newtonsoft.Json;
+@model Project3.Models.PeopleModel
+@{
+    ViewData["Title"] = Model.pageTitle;
+}
+
+<h1>@Model.title</h1>
+<div>@Model.subtitle</div>
+
+<hr/>
+
+@* Creates the Tabs for the Faculty and staff in the iSchool*@
+<div id="pepTab">
+    <ul>
+        <li><a href="#one">Faculty</a></li>
+        <li><a href="#two">Staff</a></li>
+    </ul>
+
+    <div id="one">        
+        <h2>Faculty</h2>
+        @foreach (var faculty in @Model.faculty)
+        {
+            @*Displays each faculty member with an image of themself and a clickable name that reveals a dialog box*@            
+                <div class="person">
+                    <img src="@faculty.imagePath" atl="pic" />
+                    @*Clickable name that reveals information about faculty member*@
+                    <h3 class="clickable" data-pep-info="@JsonConvert.SerializeObject(faculty)" style="font-size:small">@faculty.name</h3>
+                </div>
+        }
+    </div>
+
+    <div id="two">
+        <h2>Staff</h2>
+        @foreach (var staff in @Model.staff)
+        {
+            <div class="person">
+                @*Displays each staff member with an image of themself and a clickable name that reveals a dialog box*@            
+                <img src="@staff.imagePath" atl="pic" />
+                 @*Clickable name that reveals information about faculty member*@
+                <h3 class="clickable" data-pep-info="@JsonConvert.SerializeObject(staff)" style="font-size:small">@staff.name</h3>
+            </div>
+        }
+
+        @*Empty dialog box to be populated*@
+        <div id="people-modal" style="display: none;">
+            <p id="people-modal-content"></p>
+        </div>
+    </div>
+</div>

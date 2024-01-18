@@ -5,6 +5,34 @@
       "PackagePath": "staticwebassets\\Project3.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\assets\\DSC_0074.jpg",
+      "PackagePath": "staticwebassets\\assets\\DSC_0074.jpg"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\assets\\computing-departments-jumbotron.jpg",
+      "PackagePath": "staticwebassets\\assets\\computing-departments-jumbotron.jpg"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\assets\\golisano.jpg",
+      "PackagePath": "staticwebassets\\assets\\golisano.jpg"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\assets\\golisano.pdf",
+      "PackagePath": "staticwebassets\\assets\\golisano.pdf"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\assets\\iSchool.png",
+      "PackagePath": "staticwebassets\\assets\\iSchool.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\assets\\images.jpg",
+      "PackagePath": "staticwebassets\\assets\\images.jpg"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\assets\\react.svg",
+      "PackagePath": "staticwebassets\\assets\\react.svg"
+    },
+    {
       "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -197,6 +225,14 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\datatables\\datatables.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\datatables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\datatables\\datatables.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\datatables.min.js"
+    },
+    {
       "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
@@ -243,6 +279,82 @@
     {
       "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-bg_diagonal-maze_20_6e4f1c_10x10.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_diagonal-maze_20_6e4f1c_10x10.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-bg_diagonal-maze_40_000000_10x10.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_diagonal-maze_40_000000_10x10.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-bg_fine-grain_10_eceadf_60x60.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_fine-grain_10_eceadf_60x60.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-bg_fine-grain_10_f8f7f6_60x60.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_fine-grain_10_f8f7f6_60x60.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-bg_fine-grain_15_eceadf_60x60.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_fine-grain_15_eceadf_60x60.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-bg_fine-grain_15_f7f3de_60x60.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_fine-grain_15_f7f3de_60x60.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-bg_fine-grain_15_ffffff_60x60.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_fine-grain_15_ffffff_60x60.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-bg_fine-grain_65_654b24_60x60.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_fine-grain_65_654b24_60x60.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-bg_fine-grain_68_b83400_60x60.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_fine-grain_68_b83400_60x60.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-icons_222222_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_222222_256x240.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-icons_3572ac_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_3572ac_256x240.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-icons_8c291d_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_8c291d_256x240.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-icons_b83400_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_b83400_256x240.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-icons_fbdb93_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_fbdb93_256x240.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\images\\ui-icons_ffffff_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_ffffff_256x240.png"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\jquery-ui.min.css",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\jquery-ui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\jqueryui\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\jquery-ui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\justifiedgallery\\jquery.justifiedGallery.min.js",
+      "PackagePath": "staticwebassets\\lib\\justifiedgallery\\jquery.justifiedGallery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\alexa\\Documents\\Code\\ISTE-340\\Week 11\\MVC\\Project3\\wwwroot\\lib\\justifiedgallery\\justifiedGallery.min.css",
+      "PackagePath": "staticwebassets\\lib\\justifiedgallery\\justifiedGallery.min.css"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Project3.Microsoft.AspNetCore.StaticWebAssets.props",

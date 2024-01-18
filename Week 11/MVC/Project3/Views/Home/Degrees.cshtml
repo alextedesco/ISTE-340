@@ -1,0 +1,77 @@
+﻿@model Project3.Models.DegreeModel
+@{
+    ViewData["Title"] = Model.pageTitle;
+}
+
+<h1>Degrees</h1>
+<h2>Undergraduate</h2>
+@*Accordion with every undergraduate degree in the iSchool*@
+@foreach (var undergrad in @Model.undergraduate)
+{
+    <div class="testAcc" id="undergrad" style="margin-bottom: 10px;">
+        <h3>@undergrad.title</h3>
+        <div>
+            <p>@undergrad.description</p>
+            <h4><strong>Concentrations:</strong></h4>
+            <ul class="list" id="concentration-list">
+                @*Iterates through the concentrations in an undergrad degree*@
+                @foreach (var concentration in undergrad.concentrations)
+                {
+                    <li>
+                        @concentration
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+}
+
+
+<h2>Graduate</h2>
+
+@*Accordion with every graduate degree in the iSchool*@
+@foreach (var grad in @Model.graduate)
+{
+    <div class="testAcc" id="grad" style="margin-bottom: 10px;">
+        @if (grad.title == null)
+        {
+            <h3>@grad.degreeName</h3>
+        }
+        else
+        {
+            <h3>@grad.title</h3>
+        }
+        <div>
+            <p>@grad.description</p>
+
+            @*Checks if concentrations exist in the major since they don't in the advanced certificates*@
+            @if (grad.concentrations != null && grad.concentrations.Any())
+            {
+                <h4><strong>Concentrations:</strong></h4>
+                <ul class="list" id="concentration-list">
+                    @*Iterates through the concentrations in graduate degree*@
+                    @foreach (var concentration in grad.concentrations)
+                    {
+                        <li>
+                            @concentration
+                        </li>
+                    }
+                </ul>
+            }
+            @*Checks if there certificates instead of concentrations*@
+            @if (grad.availableCertificates != null && grad.availableCertificates.Any())
+            {
+                <h4><strong>Certificates:</strong></h4>
+                <ul class="list" id="certificate-list">
+                    @*Iterates through the certifications in graduate degree*@
+                    @foreach (var cert in grad.availableCertificates)
+                    {
+                        <li>
+                            @cert
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+}
